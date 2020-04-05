@@ -1,0 +1,45 @@
+{
+  "name": "itrecycled",
+  "version": "1.0.0",
+  "description": "Is it recycled?",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "format": "prettier --write ./**/*.{js,json,css,md,html}",
+    "build": "npm run clean && parcel build src/index.html --no-source-maps --no-cache",
+    "start": "parcel src/index.html --no-cache",
+    "watch": "parcel watch src/index.html",
+    "lint:es": "eslint --ignore-path .gitignore \"src/**/*.js\"",
+    "lint:style": "stylelint \"src/**/*.css\"",
+    "lint": "npm run lint:es && npm run lint:style"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format"
+    }
+  },
+  "author": "Zarema Khalilova <zarema.khalilova@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "prettier": "^2.0.2",
+    "stylelint": "^13.3.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-prettier": "^8.0.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.5",
+    "babel-core": "^6.26.3",
+    "babel-minify": "^0.5.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.5.1",
+    "parcel-bundler": "^1.12.4",
+    "postcss-preset-env": "^6.7.0",
+    "rimraf": "^3.0.2"
+  }
+}
