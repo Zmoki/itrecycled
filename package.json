@@ -2,7 +2,7 @@
   "name": "itrecycled",
   "version": "1.0.0",
   "description": "Is it recycled?",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "clean": "rimraf ./dist",
     "format": "prettier --write ./**/*.{js,json,css,md,html}",
