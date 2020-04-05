@@ -17,9 +17,9 @@ main {
   padding: 40px 40px 80px;
   grid-column-gap: 20px;
   grid-template-areas:
-  "icon description"
-  "icon recycled"
-  "abbr .";
+    'icon description'
+    'icon recycled'
+    'abbr .';
   grid-template-columns: 200px 1fr;
 }
 
