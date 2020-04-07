@@ -17,7 +17,9 @@ main {
   padding: 40px 40px 80px;
   grid-column-gap: 20px;
   grid-template-areas:
+    'icon category'
     'icon description'
+    'icon examples'
     'icon recycled'
     'abbr .';
   grid-template-columns: 200px 1fr;
@@ -37,9 +39,17 @@ main {
   text-align: center;
 }
 
+.result__category {
+  color: var(--color);
+  grid-area: category;
+}
+
 .result__description {
-  align-self: flex-end;
   grid-area: description;
+}
+
+.result__examples {
+  grid-area: examples;
 }
 
 .result__recycled {
