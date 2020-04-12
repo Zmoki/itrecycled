@@ -24,10 +24,23 @@ const $resultCategory = document.querySelector('.result__category');
 const $resultDescription = document.querySelector('.result__description');
 const $resultExamples = document.querySelector('.result__examples');
 const $resultRecycled = document.querySelector('.result__recycled');
+const $suggestions = document.querySelectorAll('.suggest');
+
+Array.from($suggestions).forEach(($suggestion) => {
+  $suggestion.addEventListener('click', () => {
+    const { targetId } = $suggestion.dataset;
+    const $target = document.querySelector(`#${targetId}`);
+
+    if ($target !== null) {
+      $target.value = $suggestion.innerText;
+    }
+  });
+});
 
 $check.addEventListener('submit', (e) => {
   e.preventDefault();
-  $checkError.innerText = '';
+  $result.hidden = true;
+  $checkError.hidden = true;
 
   const input = $checkInput.value;
 
@@ -61,10 +74,12 @@ $check.addEventListener('submit', (e) => {
     $resultAbbr.innerHTML = abbrToText(type.abbr);
     $resultCategory.innerText = category.name;
     $resultDescription.innerText = type.description;
-    $resultExamples.innerText = `Примеры: ${type.examples}`;
+    $resultExamples.innerText =
+      type.examples.length > 0 ? `Примеры: ${type.examples}` : '';
     $resultRecycled.innerText =
       'Пока нет информации о переработке этого в России. Но скоро она появится.';
+    $result.hidden = false;
   } else {
-    $checkError.innerText = 'Я не знаю такой код переработки';
+    $checkError.hidden = false;
   }
 });

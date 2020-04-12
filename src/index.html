@@ -2,25 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Это перерабатывается в России?</title>
     <link rel="stylesheet" href="index.css" />
   </head>
-  <body>
-    <main>
-      <h1>Это перерабатывается в России?</h1>
+  <body class="page">
+    <header class="page__header">
+      <img src="logo.svg" alt="It recycled?" />
+    </header>
+    <main class="page__main">
+      <h1 class="page__heading">Это перерабатывается в России?</h1>
       <form action="" class="check">
-        <label for="type" class="check__label">Введите номер или буквы</label>
-        <input type="text" id="type" class="check__input" required />
-        <button type="submit" class="check__submit">Проверить</button>
-        <div class="check__error"></div>
+        <input
+          type="text"
+          id="type"
+          class="check__input"
+          aria-label="Введите номер или буквы"
+          placeholder="Например PEHD или ПЭВП"
+          required
+        />
+        <button type="submit" class="check__submit">
+          <svg
+            width="16"
+            height="18"
+            viewBox="0 0 16 18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Проверить</title>
+            <path
+              d="M1.00148 12.419L5.58148 16.999C5.97148 17.389 6.61148 17.389 7.00148 16.999C7.39148 16.609 7.39148 15.969 7.00148 15.579L4.12148 12.709H14.2915C14.8415 12.709 15.2915 12.259 15.2915 11.709V1.70898C15.2915 1.15898 14.8415 0.708984 14.2915 0.708984C13.7415 0.708984 13.2915 1.15898 13.2915 1.70898V10.709H4.12148L7.00148 7.83898C7.39148 7.44898 7.39148 6.80898 7.00148 6.41898C6.61148 6.02898 5.97148 6.02898 5.58148 6.41898L1.00148 10.999C0.611484 11.389 0.611484 12.029 1.00148 12.419Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <div class="error check__error" hidden>
+          <div class="error__message">Я не знаю такой код переработки</div>
+          <div class="error__solution">
+            Попробуйте ещё, например
+            <button class="suggest" data-target-id="type">PP</button>,
+            <button class="suggest" data-target-id="type">ПНД</button> или
+            <button class="suggest" data-target-id="type">20</button>
+          </div>
+        </div>
       </form>
 
-      <section class="result">
+      <section class="result" hidden>
+        <div class="result__category"></div>
+        <div class="result__description"></div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 100"
-          width="200"
-          height="200"
+          width="140"
+          height="140"
           class="result__icon"
         >
           <path
@@ -32,12 +65,22 @@
           </text>
         </svg>
         <div class="result__abbr"></div>
-        <div class="result__category"></div>
-        <div class="result__description"></div>
         <div class="result__examples"></div>
         <div class="result__recycled"></div>
       </section>
     </main>
+    <footer class="page__footer">
+      <p><a href="mailto:hi@itrecycled.info">hi@itrecycled.info</a></p>
+      <p>Разработала <a href="https://twitter.com/Zmoki">Зарема Халилова</a></p>
+      <p>
+        Дизайн от
+        <a href="https://twitter.com/lonewolfkaz">Анатолия Вербитского</a>
+      </p>
+      <p><a href="">Поддержать разработку проекта</a></p>
+      <p>
+        Код проекта на <a href="https://github.com/Zmoki/itrecycled">гитхабе</a>
+      </p>
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>
