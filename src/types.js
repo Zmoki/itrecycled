@@ -1,11 +1,11 @@
 export const categories = {
   plastics: {
     name: 'Пластмассы',
-    color: 'yellow',
+    color: '#FFB74D',
   },
   paper: {
     name: 'Бумага',
-    color: 'blue',
+    color: '#00ACC1',
   },
   organic: {
     name: 'Органические материалы',
@@ -13,15 +13,15 @@ export const categories = {
   },
   glass: {
     name: 'Стекло',
-    color: 'green',
+    color: '#4AA371',
   },
   metals: {
     name: 'Металлы',
-    color: 'red',
+    color: '#EF5350',
   },
   composites: {
     name: 'Композитные материалы',
-    color: 'orange',
+    color: '#666',
   },
 };
 
