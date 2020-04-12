@@ -8,7 +8,11 @@
     "theme": "#fff",
     "generateIconOptions": {
       "baseIcon": "./src/public/favicon.svg",
-      "sizes": [192, 384, 512],
+      "sizes": [
+        192,
+        384,
+        512
+      ],
       "genFavicons": true
     }
   },
