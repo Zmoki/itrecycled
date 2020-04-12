@@ -1,7 +1,17 @@
 {
   "name": "itrecycled",
   "version": "1.0.0",
-  "description": "Is it recycled?",
+  "description": "Это перерабатывается в России?",
+  "pwaManifest": {
+    "name": "Is it recycled?",
+    "shortName": "itrecycled?",
+    "theme": "#fff",
+    "generateIconOptions": {
+      "baseIcon": "./src/public/favicon.svg",
+      "sizes": [192, 384, 512],
+      "genFavicons": true
+    }
+  },
   "main": "src/index.js",
   "scripts": {
     "clean": "rimraf ./dist",
@@ -39,6 +49,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-minify": "^0.5.1",
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-pwa-manifest": "^2.9.2",
     "postcss-preset-env": "^6.7.0",
     "rimraf": "^3.0.2"
   }
